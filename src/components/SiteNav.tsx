@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,8 +17,8 @@ export function SiteNav() {
 
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
-      <Link to="/" className="nav-logo">
-        Spiceup<span>Café</span>
+      <Link to="/" className="nav-logo" aria-label="SpiceupCafé home">
+        <img src={logo} alt="SpiceupCafé" className="nav-logo-img" />
       </Link>
       <ul className="nav-links">
         <li><Link to="/" className={linkCls("/")}>Home</Link></li>
