@@ -24,18 +24,28 @@ function Index() {
         <div className="hero-bg" />
         <div className="hero-pattern" />
         <div className="hero-glow" />
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span className="hero-badge-dot" />
-            Open Daily · 12 PM – 10 PM
+        <div className="hero-grid">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="hero-badge-dot" />
+              Open Daily · 12 PM – 10 PM
+            </div>
+            <h1>Where Every Bite<br /><em>Tells a Story</em></h1>
+            <p className="hero-sub">
+              A warm, cozy café in the heart of Jamkhandi — bringing bold spices, comforting flavours, and unforgettable moments to your table since day one.
+            </p>
+            <div className="hero-actions">
+              <Link to="/menu" className="btn-primary">Explore Menu →</Link>
+              <Link to="/visit" className="btn-outline">Find Us</Link>
+            </div>
           </div>
-          <h1>Where Every Bite<br /><em>Tells a Story</em></h1>
-          <p className="hero-sub">
-            A warm, cozy café in the heart of Jamkhandi — bringing bold spices, comforting flavours, and unforgettable moments to your table since day one.
-          </p>
-          <div className="hero-actions">
-            <Link to="/menu" className="btn-primary">Explore Menu →</Link>
-            <Link to="/visit" className="btn-outline">Find Us</Link>
+          <div className="hero-logo-stage" aria-hidden="true">
+            <div className="hero-logo-orb" />
+            <div className="hero-logo-ring" />
+            <span className="hero-spark s1" />
+            <span className="hero-spark s2" />
+            <span className="hero-spark s3" />
+            <img src={heroLogo} alt="" className="hero-logo-img" />
           </div>
         </div>
         <div className="hero-stats">
