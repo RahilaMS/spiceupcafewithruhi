@@ -15,7 +15,11 @@ export const Route = createFileRoute("/visit")({
   component: VisitPage,
 });
 
-const mapsUrl = "https://www.google.com/maps/search/?api=1&query=SpiceupCafe+Jumbagi+Road+Jamkhandi";
+const LAT = 16.5173;
+const LNG = 75.296515;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${LAT},${LNG}`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
+const embedUrl = `https://www.google.com/maps?q=${LAT},${LNG}&z=16&output=embed`;
 
 function VisitPage() {
   return (
@@ -33,8 +37,11 @@ function VisitPage() {
             <h4>Address</h4>
             <div className="info-text">
               <strong>SpiceupCafé</strong>
-              <span>Jumbagi Road, Jamkhandi</span>
+              <span>Jamkhandi</span>
               <span>Karnataka – 587301</span>
+              <a href={mapsUrl} target="_blank" rel="noreferrer" style={{ color: "var(--spice)", fontSize: ".85rem", marginTop: ".25rem" }}>
+                {LAT}, {LNG} ↗
+              </a>
             </div>
           </div>
           <div className="info-block">
@@ -60,18 +67,20 @@ function VisitPage() {
             </div>
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "2rem" }}>
-            <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-primary">Get Directions →</a>
+            <a href={directionsUrl} target="_blank" rel="noreferrer" className="btn-primary">Get Directions →</a>
             <Link to="/menu" className="btn-map" style={{ background: "transparent", color: "var(--spice)", border: "1px solid var(--spice)" }}>Browse Menu</Link>
           </div>
         </div>
 
-        <div className="visit-map-placeholder">
-          <div className="map-pin">📍</div>
-          <div>
-            <div className="map-address">SpiceupCafé</div>
-            <div className="map-sub">Jumbagi Road, Jamkhandi<br />Karnataka – 587301</div>
-          </div>
-          <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-map">Open in Google Maps ↗</a>
+        <div className="visit-map-embed">
+          <iframe
+            title="SpiceupCafé location map"
+            src={embedUrl}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <a href={mapsUrl} target="_blank" rel="noreferrer" className="btn-map map-overlay-btn">Open in Google Maps ↗</a>
         </div>
       </div>
 
