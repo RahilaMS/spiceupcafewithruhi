@@ -25,13 +25,13 @@ const nonveg = [
   "Chicken Pizza", "Spicy Chicken Pizza", "Chicken Burger", "Chicken Pasta",
   "Chicken Noodles", "Egg Sandwich", "Chicken Momos", "Egg Maggi",
 ];
-const hot = [
+const hotBev = [
   { icon: "☕", name: "Masala Chai" }, { icon: "🫖", name: "Lemon Ginger Tea" },
   { icon: "🌿", name: "Mint Tea" }, { icon: "🍃", name: "Green Tea" },
   { icon: "☕", name: "Black Coffee" }, { icon: "🥛", name: "Milk Coffee" },
   { icon: "☕", name: "Cappuccino" }, { icon: "☕", name: "Latte" },
 ];
-const cold = [
+const coldBev = [
   { icon: "🥤", name: "Cold Coffee" }, { icon: "🍓", name: "Strawberry Milkshake" },
   { icon: "🍫", name: "Chocolate Milkshake" }, { icon: "🥭", name: "Mango Shake" },
   { icon: "🍋", name: "Fresh Lemonade" }, { icon: "🧃", name: "Fresh Juice" },
@@ -94,7 +94,7 @@ function MenuPage() {
           <div className="food-section">
             <div className="food-section-title"><h3>Hot Beverages</h3></div>
             <div className="bev-grid">
-              {hot.map((b) => (
+              {hotBev.map((b) => (
                 <div key={b.name} className="bev-card">
                   <div className="bev-icon">{b.icon}</div>
                   <div className="bev-name">{b.name}</div>
@@ -105,7 +105,7 @@ function MenuPage() {
           <div className="food-section">
             <div className="food-section-title"><h3>Cold Beverages</h3></div>
             <div className="bev-grid">
-              {cold.map((b) => (
+              {coldBev.map((b) => (
                 <div key={b.name} className="bev-card">
                   <div className="bev-icon">{b.icon}</div>
                   <div className="bev-name">{b.name}</div>
